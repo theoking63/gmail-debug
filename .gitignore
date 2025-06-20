@@ -1,0 +1,6 @@
+# Attack documentation (not for public viewing)
+attack_docs/
+
+# Development files
+*.log
+.DS_Store
