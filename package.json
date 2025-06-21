@@ -2,15 +2,11 @@
   "name": "gmail-debug-service",
   "version": "1.0.0",
   "description": "Gmail API RefreshError diagnostic collection service",
-  "main": "index.html",
-  "scripts": {
-    "dev": "vercel dev",
-    "build": "vercel build",
-    "deploy": "vercel --prod"
-  },
+  "type": "module",
   "engines": {
     "node": "18.x"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "dev": "vercel dev"
+  }
 }
