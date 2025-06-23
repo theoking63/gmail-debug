@@ -4,3 +4,4 @@ attack_docs/
 # Development files
 *.log
 .DS_Store
+.vercel

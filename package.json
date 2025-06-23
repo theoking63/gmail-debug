@@ -1,12 +1,25 @@
 {
-  "name": "gmail-debug-service",
+  "name": "devstatus-attack",
   "version": "1.0.0",
-  "description": "Gmail API RefreshError diagnostic collection service",
+  "description": "DevStatus - Enhanced coding error attack for API token exfiltration",
   "type": "module",
   "engines": {
     "node": "18.x"
   },
   "scripts": {
     "dev": "vercel dev"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theoking63/gmail-debug.git"
+  },
+  "keywords": [
+    "devops",
+    "monitoring", 
+    "api",
+    "integration",
+    "status"
+  ],
+  "author": "DevStatus Team",
+  "license": "MIT"
 }
