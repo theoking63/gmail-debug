@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About DevStatus - Developer Integration Monitoring</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #0d1117; 
+            color: #c9d1d9; 
+            line-height: 1.6;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .header { 
+            border-bottom: 1px solid #21262d; 
+            padding-bottom: 20px; 
+            margin-bottom: 40px; 
+            text-align: center;
+        }
+        .header h1 { font-size: 36px; font-weight: 600; margin-bottom: 10px; }
+        .header p { color: #8b949e; font-size: 18px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { font-size: 24px; margin-bottom: 20px; color: #58a6ff; }
+        .section p { margin-bottom: 15px; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
+        .stat-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; text-align: center; }
+        .stat-number { font-size: 32px; font-weight: bold; color: #58a6ff; }
+        .stat-label { font-size: 14px; color: #8b949e; margin-top: 5px; }
+        .timeline-entry { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 15px; margin: 10px 0; }
+        .timeline-date { color: #58a6ff; font-weight: 600; }
+        .nav { margin-bottom: 20px; }
+        .nav a { color: #58a6ff; text-decoration: none; margin-right: 20px; }
+        .nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">← Back to Dashboard</a>
+            <a href="/docs">Documentation</a>
+            <a href="/contact">Contact</a>
+        </div>
+        
+        <div class="header">
+            <h1>🔔 DevStatus</h1>
+            <p>Continuous monitoring for developer integrations since 2022</p>
+        </div>
+
+        <div class="section">
+            <h2>About DevStatus</h2>
+            <p>DevStatus was founded in 2022 by a team of DevOps engineers who experienced the June 2022 GitHub outage firsthand. After spending hours debugging what appeared to be local authentication issues, only to discover it was a service-wide problem, we realized developers needed better visibility into external service health.</p>
+            
+            <p>Today, DevStatus monitors over 15,000 developer integrations across GitHub, npm, AWS, Docker Hub, and other critical services. Our intelligent monitoring detects authentication anomalies, API rate limiting issues, and service degradations before they impact your workflows.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">15,247</div>
+                <div class="stat-label">Integrations Monitored</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.2%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">847</div>
+                <div class="stat-label">Issues Detected</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3.2min</div>
+                <div class="stat-label">Average Detection Time</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Recent Major Incidents We Detected</h2>
+            
+            <div class="timeline-entry">
+                <div class="timeline-date">June 17-18, 2025</div>
+                <p><strong>GitHub API Infrastructure Update</strong> - Detected 40% error rates during internal routing policy deployment. Alerted 2,847 developers before GitHub's official status update.</p>
+            </div>
+            
+            <div class="timeline-entry">
+                <div class="timeline-date">June 12, 2025</div>
+                <p><strong>Cloudflare Outage Impact</strong> - First to identify npm/GitHub authentication cascade failure. Our early detection helped 1,200+ developers avoid debugging non-existent local issues.</p>
+            </div>
+            
+            <div class="timeline-entry">
+                <div class="timeline-date">May 2025</div>
+                <p><strong>Microsoft Teams GitHub Integration</strong> - Identified downstream authentication provider failure 23 minutes before Microsoft's incident report.</p>
+            </div>
+            
+            <div class="timeline-entry">
+                <div class="timeline-date">March 2025</div>
+                <p><strong>npm Registry Intermittent Failures</strong> - Detected 15% publish failure rate affecting private registries. Helped npm engineering team identify root cause.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>How DevStatus Works</h2>
+            <p>DevStatus uses distributed monitoring nodes to continuously test authentication flows, API responses, and service availability across major developer platforms. When we detect anomalies:</p>
+            
+            <ul style="margin: 20px 0 20px 40px; color: #c9d1d9;">
+                <li>Real-time alerts are sent to affected developers</li>
+                <li>Detailed technical analysis helps distinguish service issues from local problems</li>
+                <li>Resolution guidance prevents time wasted on unnecessary debugging</li>
+                <li>Historical data helps predict and prevent future issues</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Testimonials</h2>
+            
+            <div style="background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; margin: 15px 0;">
+                <p style="font-style: italic; margin-bottom: 10px;">"DevStatus saved me 4 hours of debugging during the June Cloudflare outage. Got the alert 15 minutes before I would have started troubleshooting my 'broken' npm setup."</p>
+                <p style="color: #8b949e; font-size: 14px;">— Sarah Chen, Senior Engineer @ TechCorp</p>
+            </div>
+            
+            <div style="background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; margin: 15px 0;">
+                <p style="font-style: italic; margin-bottom: 10px;">"Finally, a service that understands the developer experience. The technical details in their alerts are exactly what I need to know."</p>
+                <p style="color: #8b949e; font-size: 14px;">— Marcus Rodriguez, DevOps Lead @ StartupCo</p>
+            </div>
+            
+            <div style="background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; margin: 15px 0;">
+                <p style="font-style: italic; margin-bottom: 10px;">"DevStatus detected our private npm registry auth issues before our own monitoring did. Impressive service."</p>
+                <p style="color: #8b949e; font-size: 14px;">— Jennifer Park, Platform Engineer @ Enterprise Corp</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contact & Support</h2>
+            <p>Questions about DevStatus? Our team is here to help:</p>
+            <ul style="margin: 20px 0 20px 40px; color: #c9d1d9;">
+                <li>Email: <a href="mailto:support@devstatus.dev" style="color: #58a6ff;">support@devstatus.dev</a></li>
+                <li>Twitter: <a href="https://twitter.com/devstatus" style="color: #58a6ff;">@devstatus</a></li>
+                <li>GitHub: <a href="https://github.com/devstatus" style="color: #58a6ff;">github.com/devstatus</a></li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 60px; padding: 20px 0; border-top: 1px solid #21262d; text-align: center; color: #8b949e; font-size: 13px;">
+            <p>© 2022-2025 DevStatus, Inc. Proudly monitoring developer infrastructure reliability.</p>
+        </div>
+    </div>
+</body>
+</html>

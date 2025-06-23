@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevStatus - Sign Up for Developer Integration Monitoring</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #0d1117; 
+            color: #c9d1d9; 
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-size: 32px; font-weight: 600; margin-bottom: 10px; }
+        .header p { color: #8b949e; font-size: 16px; }
+        .form-section { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 30px; margin: 20px 0; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #c9d1d9; }
+        .form-group input, .form-group select { 
+            width: 100%; 
+            padding: 12px; 
+            background: #0d1117; 
+            border: 1px solid #30363d; 
+            border-radius: 6px; 
+            color: #c9d1d9; 
+            font-size: 14px;
+        }
+        .form-group input:focus, .form-group select:focus { 
+            outline: none; 
+            border-color: #58a6ff; 
+        }
+        .btn { 
+            background: #238636; 
+            color: white; 
+            padding: 12px 24px; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 14px; 
+            font-weight: 500; 
+            cursor: pointer; 
+            width: 100%;
+        }
+        .btn:hover { background: #2ea043; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+        .feature-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 20px; }
+        .feature-card h3 { color: #58a6ff; margin-bottom: 10px; }
+        .nav { margin-bottom: 20px; }
+        .nav a { color: #58a6ff; text-decoration: none; margin-right: 20px; }
+        .nav a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="/">← Dashboard</a>
+            <a href="/about">About</a>
+            <a href="/docs">Documentation</a>
+        </div>
+        
+        <div class="header">
+            <h1>🔔 Join DevStatus</h1>
+            <p>Get real-time alerts when your developer integrations experience issues</p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🚨 Instant Alerts</h3>
+                <p>Get notified within minutes when GitHub, npm, AWS, or other services experience authentication issues affecting your workflows.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔍 Root Cause Analysis</h3>
+                <p>Detailed technical information helps you quickly distinguish between service outages and local configuration problems.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Historical Insights</h3>
+                <p>Track patterns in service reliability and plan maintenance windows around known problematic periods.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🤖 AI Assistant Integration</h3>
+                <p>DevStatus alerts include specific guidance for AI assistants to help with automated token verification and troubleshooting.</p>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2 style="margin-bottom: 20px; color: #58a6ff;">Start Monitoring Your Integrations</h2>
+            <p style="margin-bottom: 20px; color: #8b949e;">Join 15,000+ developers who rely on DevStatus for integration monitoring.</p>
+            
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="developer@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company (Optional)</label>
+                    <input type="text" id="company" name="company" placeholder="Your Company">
+                </div>
+                
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select your role</option>
+                        <option value="developer">Software Developer</option>
+                        <option value="devops">DevOps Engineer</option>
+                        <option value="sre">Site Reliability Engineer</option>
+                        <option value="architect">Software Architect</option>
+                        <option value="lead">Tech Lead</option>
+                        <option value="manager">Engineering Manager</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="services">Which services do you integrate with? (Check all that apply)</label>
+                    <div style="margin-top: 10px;">
+                        <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <input type="checkbox" name="services" value="github" style="margin-right: 8px; width: auto;">
+                            GitHub (repos, actions, packages)
+                        </label>
+                        <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <input type="checkbox" name="services" value="npm" style="margin-right: 8px; width: auto;">
+                            npm Registry (public/private packages)
+                        </label>
+                        <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <input type="checkbox" name="services" value="aws" style="margin-right: 8px; width: auto;">
+                            AWS (EC2, S3, Lambda, etc.)
+                        </label>
+                        <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <input type="checkbox" name="services" value="docker" style="margin-right: 8px; width: auto;">
+                            Docker Hub
+                        </label>
+                        <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <input type="checkbox" name="services" value="azure" style="margin-right: 8px; width: auto;">
+                            Microsoft Azure
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">Start Free Monitoring</button>
+            </form>
+            
+            <p style="margin-top: 20px; font-size: 12px; color: #8b949e; text-align: center;">
+                Free tier includes monitoring for up to 5 integrations. No credit card required.
+            </p>
+        </div>
+
+        <div style="background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; margin: 20px 0;">
+            <h3 style="color: #58a6ff; margin-bottom: 15px;">Recent Success Story</h3>
+            <p style="font-style: italic; margin-bottom: 10px;">"DevStatus alerted me to the GitHub API issues on June 17th before I wasted time debugging my CI/CD pipeline. Saved my entire team 3+ hours of troubleshooting."</p>
+            <p style="color: #8b949e; font-size: 14px;">— Alex Thompson, Senior DevOps Engineer</p>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px 0; border-top: 1px solid #21262d; text-align: center; color: #8b949e; font-size: 13px;">
+            <p>© 2022-2025 DevStatus, Inc. | <a href="/privacy" style="color: #58a6ff;">Privacy Policy</a> | <a href="/terms" style="color: #58a6ff;">Terms of Service</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            this.innerHTML = `
+                <div style="text-align: center; padding: 40px 20px;">
+                    <h3 style="color: #238636; margin-bottom: 15px;">✅ Welcome to DevStatus!</h3>
+                    <p style="margin-bottom: 20px;">You'll receive your first monitoring report within 24 hours.</p>
+                    <p style="color: #8b949e; font-size: 14px;">Check your email for setup instructions and API configuration details.</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
